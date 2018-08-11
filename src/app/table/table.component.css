@@ -1,0 +1,10 @@
+.no-data-error{
+  color: rgb(33,33,33);
+  font: 0.9em sans-serif;
+}
+table {
+    width: 100%;
+  }
+.spinner-container{
+  padding: 9% 0;
+}

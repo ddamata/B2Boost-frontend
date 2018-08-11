@@ -1,0 +1,20 @@
+.home-title {
+    color: rgb(33,33,33);
+    font: 3em sans-serif;
+    text-align: center;
+    text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 0.5px black;
+    height: 100%; 
+}
+.home-containet-title { 
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    height: auto;
+}
+
+.home-text {
+    padding: 0% 5%;
+    color: rgb(33,33,33);
+    font: 1em sans-serif;
+    text-align: justify;
+}

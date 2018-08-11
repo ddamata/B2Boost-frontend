@@ -1,0 +1,19 @@
+.header{
+    background-color:  black ;
+    color: #F3F3F3;
+    height: 90px;
+    font: 1em sans-serif;
+    text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 0.5px black;
+    position: relative;
+}
+.hidable-menu{
+    position: absolute;
+    top: 22px;
+    right: 5%;
+}
+
+.logo-header{
+    width: 60px !important;
+    height: 59px !important;
+    margin: 10px 20px 10px 20px !important;
+}

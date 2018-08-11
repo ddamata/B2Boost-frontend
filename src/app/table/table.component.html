@@ -1,0 +1,48 @@
+<div>
+  <mat-form-field >
+    <input matInput placeholder="Search partner" (ng-model)="seachFilter">
+  </mat-form-field>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Id </th>
+      <td mat-cell *matCellDef="let element"> {{element.Id}} </td>
+    </ng-container>
+    
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="reference">
+      <th mat-header-cell *matHeaderCellDef> Reference</th>
+      <td mat-cell *matCellDef="let element"> {{element.Reference}} </td>
+    </ng-container>
+    
+    <!-- Locale Column -->
+    <ng-container matColumnDef="locale">
+      <th mat-header-cell *matHeaderCellDef> Locale </th>
+      <td mat-cell *matCellDef="let element"> {{element.Locale}} </td>
+    </ng-container>
+    
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="expirationTime">
+      <th mat-header-cell *matHeaderCellDef> Expiration Time </th>
+      <td mat-cell *matCellDef="let element"> {{element.getDateFormated()}} </td>
+    </ng-container>
+    
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"  (click)="onRowClicked(row)"></tr>
+  </table>
+  <div class="spinner-container" *ngIf="dataSource.loading$ | async" fxlayout="row" fxLayoutAlign="center center">
+    <mat-spinner></mat-spinner>
+  </div>
+  <div *ngIf="!dataSource.getSize()" fxlayout="row" fxLayoutAlign="center center">
+    <p class="no-data-error">No data found</p>
+  </div>
+  <mat-paginator [length]="dataSource.getSize()" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" ></mat-paginator>
+</div>

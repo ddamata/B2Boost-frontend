@@ -1,0 +1,11 @@
+<div fxLayout='row' class="header">
+        <div fxLayout='row' fxFlex='30' fxFlex.md='40' ign='space-between center'>
+            <img *ngIf="logoHeader" class="logo-header" src="{{logoHeader}}" nogrow>
+            <h1 fxHide.lt-md="true" >{{title}}</h1>
+            <h1 fxShow.lt-md="true" fxHide.gt-sm="true">{{titleShort}}</h1>
+        </div>
+        <span fxHide.lt-md="true" fxFlex='20'></span>
+        <app-menu fxHide.lt-md="true" class="padding-rigth-20"  fxLayout='row' fxLayoutAlign='space-between center' fxFlex></app-menu>
+        </div>
+      <div class="yellow-bar"></div>
+
