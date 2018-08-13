@@ -1,9 +1,9 @@
-import { PartnerModel } from '../model/partner-model';
+import { PartnerModel } from './partner-model';
 import { CollectionViewer, DataSource} from "@angular/cdk/collections";
 import { BehaviorSubject, Observable } from 'rxjs';
 import { PartnersApi } from '../api/partnersApi';
 import {MatSnackBarModule, MatSnackBar} from '@angular/material/snack-bar';
-import { Injectable } from '../../../node_modules/@angular/core';
+import { Injectable } from '@angular/core';
 
 
 

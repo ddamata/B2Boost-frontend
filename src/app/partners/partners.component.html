@@ -1,3 +1,11 @@
 <div class="partners-table">
-  <app-table ></app-table>
+  <div fxlayout='row' fxLayoutAlign="space-between center">
+    <mat-form-field>
+      <input matInput placeholder="Search partner" (ng-model)="seachFilter">
+    </mat-form-field>
+    <div class="form-group" fxlayout="row" fxLayoutAlign="end center">
+      <button type="submit" class="btn btn-primary" (click)="newPartner()">New Partner</button>
+    </div>
+  </div>
+  <app-table></app-table>
 </div>

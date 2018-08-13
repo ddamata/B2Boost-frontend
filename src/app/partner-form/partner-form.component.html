@@ -1,0 +1,29 @@
+<div fxlayout="colum" fxLayoutAlign="space-around stretch">
+  <form>
+    <div class="form-group form">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" name="Name" [(ngModel)]="partnerEdited.Name" required>
+    </div>
+    <div class="form-group form">
+      <label for="name">Reference</label>
+      <input type="text" class="form-control" name="Reference" [(ngModel)]="partnerEdited.Reference" required>
+    </div>
+    <div class="form-group form">
+      <label for="name form">Locale</label>
+      <input type="text" class="form-control" name="Locate" [(ngModel)]="partnerEdited.Locale" required>
+    </div>
+    <div class="form-group form">
+      <label for="date">Expiration date</label>
+      <input type="date" class="form-control" name="ExpirationTime" [(ngModel)]="expirationDate" required>
+    </div>
+    <div fxlayout="row" fxLayoutAlign="space-between center">
+      <div class="form-group">
+        <button class="btn btn-danger" (click)="cancelCreate()">cancel</button>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-success">save</button>
+      </div>
+
+    </div>
+  </form>
+</div>

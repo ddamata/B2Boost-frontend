@@ -1,9 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-
-
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule} from '@angular/material';
 import { MatMenuModule} from '@angular/material/menu';
@@ -17,14 +13,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 import { PartnersApi }  from './api/partnersApi';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
 import { PartnersComponent } from './partners/partners.component';
 import { TableComponent } from './table/table.component';
-
-
+import { PartnerForm } from './partner-form/partner-form.component';
+import { PartnerComponent } from './partner/partner.component';
+import { CreatePartnerComponent } from './create-partner/create-partner.component';
 
 @NgModule({
 
@@ -34,7 +33,10 @@ import { TableComponent } from './table/table.component';
     HomeComponent,
     MenuComponent,
     PartnersComponent,
-    TableComponent
+    TableComponent,
+    PartnerForm,
+    PartnerComponent,
+    CreatePartnerComponent
   ],
 
   imports: [
@@ -52,11 +54,11 @@ import { TableComponent } from './table/table.component';
     HttpClientModule,
     FormsModule,
     MatInputModule,
-    MatSnackBarModule
+    MatSnackBarModule,
   ],
 
-  providers: [PartnersApi],
+  providers: [ PartnersApi ],
 
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

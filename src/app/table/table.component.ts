@@ -1,11 +1,12 @@
 import { Component, OnInit, AfterViewInit, ViewChild} from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
-import { PartnersApi } from '../api/partnersApi';
-import { tap, merge } from 'rxjs/operators';
-import { PartnerDataSource } from '../model/partner-data-source';
 import { MatPaginator } from '@angular/material/paginator';
 import {MatSnackBarModule, MatSnackBar} from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+import { tap } from 'rxjs/operators';
+
+import { PartnerDataSource } from '../model/partner-data-source';
+import { PartnersApi } from '../api/partnersApi';
 
 
 
@@ -16,7 +17,7 @@ import {MatSnackBarModule, MatSnackBar} from '@angular/material/snack-bar';
 })
 export class TableComponent implements AfterViewInit, OnInit {
   
-  displayedColumns: string[] = ['id', 'name', 'reference', 'locale', 'expirationTime'];
+  displayedColumns: string[] = ['id', 'name', 'reference', 'locale', 'expirationTime', 'Delete'];
   dataSource : PartnerDataSource;
   dataSourceLength: number = 0;
   pageSizeOptions: number[] = [10,15,20];
@@ -29,7 +30,7 @@ export class TableComponent implements AfterViewInit, OnInit {
 
   
 
-  constructor(private partnersApi: PartnersApi, private route: ActivatedRoute, public snackBar: MatSnackBar) { 
+  constructor(private partnersApi: PartnersApi, private router: Router, public snackBar: MatSnackBar) { 
     //this.getTableData();
   }
 
@@ -52,7 +53,11 @@ export class TableComponent implements AfterViewInit, OnInit {
   }
 
   onRowClicked(row){
-    alert("alert: "+ row );
+    this.router.navigate(['/partner',row.Id]);
+  }
+
+  deleteIcon(id){
+    alert(id);
   }
 
 }

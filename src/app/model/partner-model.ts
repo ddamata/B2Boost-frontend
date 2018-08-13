@@ -9,14 +9,16 @@ export class PartnerModel {
     ExpirationTime: String;
     ExpirationTimeMoment: any;
     
+
     constructor( partnerModel ){
-        this.Id = partnerModel.Id;
-        this.Name = partnerModel.Name;
-        this.Reference = partnerModel.Reference;
-        this.Locale = partnerModel.Locale;
-        this.ExpirationTime = partnerModel.ExpirationTime;
-        this.ExpirationTimeMoment = moment(partnerModel.ExpirationTime);
+        this.Id = partnerModel ? partnerModel.Id : -1;
+        this.Name = partnerModel? partnerModel.Name : "";
+        this.Reference = partnerModel ? partnerModel.Reference : "";
+        this.Locale = partnerModel ? partnerModel.Locale : "";
+        this.ExpirationTime = partnerModel ? partnerModel.ExpirationTime : "";
+        this.ExpirationTimeMoment = partnerModel ? moment(partnerModel.ExpirationTime) : moment(new Date());
     }
+
 
     getDateFormated(){
         return this.ExpirationTimeMoment.format('MMMM Do YYYY, h:mm:ss a');

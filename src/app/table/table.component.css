@@ -8,3 +8,7 @@ table {
 .spinner-container{
   padding: 9% 0;
 }
+.delete{
+  color: red;
+  text-decoration: none;
+}
