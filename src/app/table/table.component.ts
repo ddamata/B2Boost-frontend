@@ -77,7 +77,7 @@ export class TableComponent implements AfterViewInit, OnInit {
       },
       'go': id,
       'text': "Sure you want to delete this partner",
-      'title': "Delte partner"
+      'title': "Delete partner"
     };
     this.mdDialog.open(ConfirmationDialogComponent, {
       data: data
