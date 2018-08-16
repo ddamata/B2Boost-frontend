@@ -10,20 +10,18 @@ import { Router } from '@angular/router';
 export class PartnerForm implements OnInit {
   
   @Input() partner: PartnerModel;
-  expirationDate: String = "";
-  partnerEdited: PartnerModel;
-
-  constructor(private router: Router) { 
-  }
+  @Input() submit: Function;
+  
+  constructor(private router: Router) {}
 
   ngOnInit() {
-    this.partnerEdited = this.partner ? this.partner : new  PartnerModel(undefined);
-    this.expirationDate = this.partnerEdited.ExpirationTimeMoment.format('MM/DD/YYYY');
-    console.log(this.expirationDate);
   }
 
   cancelCreate(){
     this.router.navigate(['/partners']);
   }
-
+  
+  onSubmit() {  
+    this.submit(this.partner);
+  }
 }

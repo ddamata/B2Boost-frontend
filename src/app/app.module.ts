@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +26,7 @@ import { TableComponent } from './table/table.component';
 import { PartnerForm } from './partner-form/partner-form.component';
 import { PartnerComponent } from './partner/partner.component';
 import { CreatePartnerComponent } from './create-partner/create-partner.component';
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 
 @NgModule({
 
@@ -36,7 +39,8 @@ import { CreatePartnerComponent } from './create-partner/create-partner.componen
     TableComponent,
     PartnerForm,
     PartnerComponent,
-    CreatePartnerComponent
+    CreatePartnerComponent,
+    ConfirmationDialogComponent
   ],
 
   imports: [
@@ -55,10 +59,13 @@ import { CreatePartnerComponent } from './create-partner/create-partner.componen
     FormsModule,
     MatInputModule,
     MatSnackBarModule,
+    MatDialogModule
   ],
 
   providers: [ PartnersApi ],
 
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent ],
+
+  entryComponents: [ ConfirmationDialogComponent ]
 })
 export class AppModule { }

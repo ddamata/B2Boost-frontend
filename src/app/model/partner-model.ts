@@ -11,16 +11,22 @@ export class PartnerModel {
     
 
     constructor( partnerModel ){
-        this.Id = partnerModel ? partnerModel.Id : -1;
-        this.Name = partnerModel? partnerModel.Name : "";
-        this.Reference = partnerModel ? partnerModel.Reference : "";
-        this.Locale = partnerModel ? partnerModel.Locale : "";
-        this.ExpirationTime = partnerModel ? partnerModel.ExpirationTime : "";
-        this.ExpirationTimeMoment = partnerModel ? moment(partnerModel.ExpirationTime) : moment(new Date());
+        this.Id = partnerModel.Id; 
+        this.Name = partnerModel.Name; 
+        this.Reference = partnerModel.Reference;
+        this.Locale =  partnerModel.Locale ;
+        this.ExpirationTime =  moment(partnerModel.ExpirationTime).month(1).format("YYYY-MM-DD");  
     }
 
+    toPlane(){
+        let partner = _.pick(this, ['Id', 'Name', 'Reference', 'Locale', 'ExpirationTime']);
+        //partner.ExpirationTime = moment(this.ExpirationTime).format("YYYY-MM-DD HH:mm Z");
+        return partner;
+    }
 
-    getDateFormated(){
-        return this.ExpirationTimeMoment.format('MMMM Do YYYY, h:mm:ss a');
+    toCreate(){
+        let partner = _.pick(this, ['Name', 'Reference', 'Locale', 'ExpirationTime']);
+        //partner.ExpirationTime = moment(this.ExpirationTime).format("YYYY-MM-DD HH:mm Z");
+        return partner;
     }
 }

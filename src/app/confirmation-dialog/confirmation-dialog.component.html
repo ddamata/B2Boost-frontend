@@ -1,0 +1,16 @@
+<div class="dialog-container photo-conainer" fxLayout="column" fxLayoutAlign="space-between stretch">
+  <div class="header" fxLayout="row" fxLayoutAlign="space-between center">
+      <h2 mat-dialog-title>{{ data.title }}</h2>
+  </div>
+  <div class="padding-5 " fxLayout="row" fxLayoutAlign="center center">
+    
+    <p class="text-mark" [innerHTML]="data.text"></p>
+   
+  </div>
+  <div fxLayout="row" fxLayoutAlign="end center">
+    <button  class="btn btn-primary" (click)="close()">Cancel</button>
+    <div fxFlex="5"></div>
+    <button class="btn btn-danger" (click)="delete()">Delete</button>
+  </div>
+  <img class="water-mark"  src="../assets/exclamation.png">
+</div>

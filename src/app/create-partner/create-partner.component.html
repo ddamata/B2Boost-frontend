@@ -1,4 +1,4 @@
 <div class="p-5">
   <h2>Create Partner</h2>
-  <app-partner-form [(partner)]="partner" ></app-partner-form>
+  <app-partner-form [(partner)]="newPartner" (submit)="createPartner(newPartner)" ></app-partner-form>
 </div>

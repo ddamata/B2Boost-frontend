@@ -1,29 +1,37 @@
 <div fxlayout="colum" fxLayoutAlign="space-around stretch">
-  <form>
+
+  <form #partnerForm="ngForm">
     <div class="form-group form">
       <label for="name">Name</label>
-      <input type="text" class="form-control" name="Name" [(ngModel)]="partnerEdited.Name" required>
+      <input type="text" class="form-control" id="Name"  name="Name" required [(ngModel)]="partner.Name"  #Name="ngModel"> 
+      <div [hidden]="Name.valid || Name.pristine" class="alert alert-danger"> Name is required</div>
     </div>
     <div class="form-group form">
       <label for="name">Reference</label>
-      <input type="text" class="form-control" name="Reference" [(ngModel)]="partnerEdited.Reference" required>
+      <input type="text" class="form-control" id="Reference" name="Reference" required [(ngModel)]="partner.Reference"
+       #Reference="ngModel">
+       <div [hidden]="Reference.valid || Reference.pristine" class="alert alert-danger"> Reference is required</div>
     </div>
     <div class="form-group form">
       <label for="name form">Locale</label>
-      <input type="text" class="form-control" name="Locate" [(ngModel)]="partnerEdited.Locale" required>
+      <input type="text" class="form-control" id="Locate" name="Locate" required [(ngModel)]="partner.Locale" 
+      #Locate="ngModel">
+      <div [hidden]="Locate.valid || Locate.pristine" class="alert alert-danger"> Locate is required</div>
     </div>
     <div class="form-group form">
       <label for="date">Expiration date</label>
-      <input type="date" class="form-control" name="ExpirationTime" [(ngModel)]="expirationDate" required>
+      <input type="date" class="form-control" id="ExpirationTime" name="ExpirationTime" required 
+      [(ngModel)]="partner.ExpirationTime" #ExpirationTime="ngModel">
+      <div [hidden]="ExpirationTime.valid || ExpirationTime.pristine" class="alert alert-danger"> Expiration time is required</div>      
     </div>
     <div fxlayout="row" fxLayoutAlign="space-between center">
       <div class="form-group">
         <button class="btn btn-danger" (click)="cancelCreate()">cancel</button>
       </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-success">save</button>
+        <button type="submit" class="btn btn-success"  [disabled]="!partnerForm.form.valid">save</button>
       </div>
-
     </div>
   </form>
+  <pre>{{partner | json}}</pre> 
 </div>

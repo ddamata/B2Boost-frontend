@@ -39,7 +39,7 @@ export class PartnerDataSource implements DataSource<PartnerModel> {
                 },
                 (err) => {
                     this.loadingSubject.next(false)
-                    this.snackBar.open( err.error.message, "close" , {
+                    this.snackBar.open( "ERROR: "+err.error.message, "close" , {
                         duration: 20000,
                       });
                 }
