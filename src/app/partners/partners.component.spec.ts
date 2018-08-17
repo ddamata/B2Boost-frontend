@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PartnersComponent } from './partners.component';
+import { MatFormField } from '@angular/material';
+import { TableComponent } from '../table/table.component';
 
 describe('PartnersComponent', () => {
   let component: PartnersComponent;
@@ -8,7 +10,8 @@ describe('PartnersComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PartnersComponent ]
+      declarations: [ PartnersComponent, MatFormField, TableComponent ],
+
     })
     .compileComponents();
   }));

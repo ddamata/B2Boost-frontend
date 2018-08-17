@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { map, switchMap } from 'rxjs/operators';
 import { PartnersApi } from '../api/partnersApi';
-import { Observable } from '../../../node_modules/rxjs';
 import { PartnerModel } from '../model/partner-model';
 import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
+import * as moment from 'moment';
 
 
 @Component({
@@ -16,10 +15,15 @@ import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
 export class PartnerComponent implements OnInit {
 
  
-  partner: PartnerModel;
+  partner: PartnerModel ;
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router, private partnersApi: PartnersApi, public snackBar: MatSnackBar) {
-   
+   this.partner = new PartnerModel({"Id" : -1, 
+   "Name" : "",
+   "Reference": "",
+   "Locale ": "",
+   "ExpirationTime" : moment(new Date()).month(1).format("DD-MM-YYYY"), 
+   });
   }
 
   ngOnInit() {

@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PartnerComponent } from './partner.component';
+import  { PartnerForm } from '../partner-form/partner-form.component'
+import { PartnersApi } from '../api/partnersApi';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('PartnerComponent', () => {
   let component: PartnerComponent;
@@ -8,7 +11,9 @@ describe('PartnerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PartnerComponent ]
+      declarations: [ PartnerComponent, PartnerForm ],
+      imports: [RouterTestingModule],
+      providers: [PartnersApi]
     })
     .compileComponents();
   }));

@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule} from '@angular/material';
 import { MatMenuModule} from '@angular/material/menu';
@@ -12,7 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppComponent } from './app.component';
 import { PartnersApi }  from './api/partnersApi';
@@ -25,6 +25,8 @@ import { PartnerForm } from './partner-form/partner-form.component';
 import { PartnerComponent } from './partner/partner.component';
 import { CreatePartnerComponent } from './create-partner/create-partner.component';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
+import { AppRoutingModule } from './app-routing.module';
+
 
 @NgModule({
 
@@ -40,7 +42,7 @@ import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-
     CreatePartnerComponent,
     ConfirmationDialogComponent
   ],
-
+  
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -56,13 +58,15 @@ import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-
     FormsModule,
     MatInputModule,
     MatSnackBarModule,
-    MatDialogModule
+    MatDialogModule,
+    AppRoutingModule
   ],
 
   providers: [ PartnersApi ],
 
   bootstrap: [ AppComponent ],
 
-  entryComponents: [ ConfirmationDialogComponent ]
+  entryComponents: [ ConfirmationDialogComponent ],
+
 })
 export class AppModule { }
